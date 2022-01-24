@@ -1,0 +1,29 @@
+{
+  "name": "weatherrangers_backend-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiaojiaon/WeatherRangers_backend-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiaojiaon/WeatherRangers_backend-/issues"
+  },
+  "homepage": "https://github.com/jiaojiaon/WeatherRangers_backend-#readme",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
+    "sequelize": "^6.14.0"
+  }
+}

@@ -7,10 +7,7 @@ const db = require("./database")
 // password
 
 const Users = db.define('users', {
-    userId: {
-        type: DataTypes.INTEGER(),
-        primarykey:true,
-    },
+    
     firstName: {
         type: DataTypes.STRING(50),
         allowNull: false,

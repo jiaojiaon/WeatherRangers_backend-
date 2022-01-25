@@ -7,32 +7,28 @@ const db = require("./database")
 
 
 const Favorites = db.define('favorites', {
-    favId: {
-        type: DataTypes.INTEGER(),
-        primarykey:true,
-        allowNull: false
-    },
+ 
     userId: {
         type: DataTypes.INTEGER(),
-        foreignkey:true,
+        // foreignkey:true,
         allowNull: false,
-        validate: {
-            notEmpty: true,
-            notNull: true
-        }
+        // validate: {
+        //     notEmpty: true,
+        //     notNull: true
+        // }
     },
     locationId: {
         type: DataTypes.INTEGER(),
-        foreignkey: true,
+        // foreignkey: true,
         allowNull: false,
-        validate: {
-            notEmpty: true,
-            notNull: true
-        }
+        // validate: {
+        //     notEmpty: true,
+        //     notNull: true
+        // }
     },
     zipCode: {
         type: DataTypes.INTEGER(5),
-        foreignkey:true,
+        // foreignkey:true,
         allowNull: false,
         validate: {
             notEmpty: true,

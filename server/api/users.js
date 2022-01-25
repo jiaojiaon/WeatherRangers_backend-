@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Users } = require('../db')
+const  Users  = require('../db/user')
 
 router.get('/', async (req, res) => {
     try {
@@ -10,9 +10,9 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:userId', async(req, res) => {
+router.get('/:id', async(req, res) => {
     try {
-        const user = await Users.findByPk(req.params.userId)
+        const user = await Users.findByPk(req.params.id)
         res.send(user)
     } catch (error) {
         res.send(error.message)
@@ -28,17 +28,15 @@ router.post('/', async(req, res) => {
     }
 })
 
-router.delete('/:userId', async(req, res) => {
-    try{
-        const inputid = req.params.userId;
-        await Users.destroy({where: {userId : inputid}});
-        res.status(200).json({
-            outcome: `Deleted user id ${inputid}`
-        })
-    }catch (error) {
+router.delete('/:id', async(req, res) =>  {
+    try {
+        const userId = await Users.findByPk(req.params.id)
+        userId.destroy()
+        res.status(200).send("Successfully Deleted!")
+    } catch(error) {
         res.send(error.message)
     }
+});
 
-})
 
 module.exports = router

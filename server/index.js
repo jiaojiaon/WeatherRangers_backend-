@@ -16,7 +16,7 @@ app.use('/api', require('./api/index'))
 
 db.sync().then(() =>{
     console.log('db synced')
-    app.listen(PORT, () =>
-        console.log(`Serving ports ${PORT}`)
+    app.listen(process.env.PORT, () =>
+        console.log(`Serving ports ${process.env.PORT}`)
     )
 })

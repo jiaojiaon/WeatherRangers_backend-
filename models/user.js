@@ -11,16 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      //Not sure about through, as part
       User.belongsToMany(models.Location, {
-        through: models.Favorite,
-        as: 'locations',
-        foreignKey: 'user_id',
-        onDelete: 'CASCADE',
-      })
+        through: 'Favorite'
+        // ,
+        // as: 'location',
+        // foreignKey: 'user_id',
+        // onDelete: 'CASCADE',
+      });
     }
   }
   User.init({
+    user_id: DataTypes.INTEGER,
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,

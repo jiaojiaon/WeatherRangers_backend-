@@ -11,20 +11,18 @@ module.exports = {
       user_id: {
         type: Sequelize.DataTypes.INTEGER,
         onDelete: 'CASCADE',
-        references: {
-          model: 'Users',        
-          key: 'id',
-          as:'user_id',
-        },
+        // references: {
+        //   model: 'Users',        
+        //   key: 'user_id',        
+        // },
         allowNull: false,
       },
-      location_id: {
+      zip_code: {
         type: Sequelize.DataTypes.INTEGER,
         onDelete: 'CASCADE',
         // references: {
         //   model:'Locations', 
-        //   key:'id',
-        //   as:'location_id',
+        //   key:'zip_code',          
         // },
         allowNull: false,
       },

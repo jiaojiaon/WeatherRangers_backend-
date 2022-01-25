@@ -12,10 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Location.belongsToMany(models.User, {
-        through: models.Favorite,
-        as: 'users',
-        foreignKey: 'location_id',
-        onDelete: 'CASCADE',
+        through: 'Favorite'
+        // ,
+        // as: 'user',
+        // foreignKey: 'zip_code',
+        // onDelete: 'CASCADE',
       }); 
     }
   }

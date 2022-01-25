@@ -2,12 +2,22 @@ const Sequelize = require('sequelize')
 const dbConfig = require('config')
 const pkg = require('../../package.json')
 
-const db = new Sequelize(
-    process.env.DATABASE_url || `postgres://postgres:postgres@localhost:5432/weatherrangers_backend`,
-    {
-        logging: false
+// const db = new Sequelize(
+//     process.env.DATABASE_url || `postgres://postgres:postgres@localhost:5432/weatherrangers_backend`,
+//     {
+//         logging: false
+//     }
+// )
+const db = new Sequelize(process.env.DATABASE_URL, {
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
     }
-)
+  }
+);
+
 
 async function connectStatus() {
     try {

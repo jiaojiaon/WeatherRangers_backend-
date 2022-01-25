@@ -3,10 +3,8 @@ const dbConfig = require('config')
 const pkg = require('../../package.json')
 
 const db = new Sequelize(
-    dbConfig.dbURL || `postgres://localhost:5432/${pkg.name}`,
+    process.env.DATABASE_url || `postgres://localhost:5432/weatherrangers_backend`,
     {
-        user: dbConfig.USER,
-        password: dbConfig.PASSWORD,
         logging: false
     }
 )

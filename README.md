@@ -3,5 +3,8 @@
 # Done by : 
 * [Farai Mutukumira](https://github.com/FaraiMajor)
 * [Lubna Khalid](https://github.com/lkhalid0095)
-* [](https://github.com/razhar5214)
+* [Hyeran Park](https://github.com/HyeranPark99)
+* [Jiao Jiao Ding](https://github.com/jiaojiaon)
+
+
 

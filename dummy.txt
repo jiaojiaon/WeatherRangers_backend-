@@ -1,0 +1,97 @@
+Loctaions:
+[
+    {
+        "id": 1,
+        "zipCode": 10002,
+        "city": "New York",
+        "states": "New York",
+        "createdAt": "2022-01-25T17:10:47.082Z",
+        "updatedAt": "2022-01-25T17:10:47.082Z"
+    },
+    {
+        "id": 2,
+        "zipCode": 10002,
+        "city": "New York",
+        "states": "New York",
+        "createdAt": "2022-01-25T17:10:52.115Z",
+        "updatedAt": "2022-01-25T17:10:52.115Z"
+    },
+    {
+        "id": 4,
+        "zipCode": 10002,
+        "city": "New York",
+        "states": "New York",
+        "createdAt": "2022-01-25T17:12:58.492Z",
+        "updatedAt": "2022-01-25T17:12:58.492Z"
+    }
+]
+
+
+Users:
+[
+    {
+        "id": 2,
+        "firstName": "jane",
+        "lastName": "doe",
+        "email": "janeDoe@gmail.com",
+        "password": "1234abc",
+        "createdAt": "2022-01-25T16:33:37.369Z",
+        "updatedAt": "2022-01-25T16:33:37.369Z"
+    },
+    {
+        "id": 3,
+        "firstName": "jane",
+        "lastName": "doe2",
+        "email": "janeDoe2@gmail.com",
+        "password": "1234abc",
+        "createdAt": "2022-01-25T16:58:11.953Z",
+        "updatedAt": "2022-01-25T16:58:11.953Z"
+    },
+    {
+        "id": 4,
+        "firstName": "jane",
+        "lastName": "doe3",
+        "email": "janeDoe2@gmail.com",
+        "password": "1234abc",
+        "createdAt": "2022-01-25T17:08:01.096Z",
+        "updatedAt": "2022-01-25T17:08:01.096Z"
+    }
+]
+
+Favorites:
+[
+    {
+        "id": 11,
+        "userId": 2,
+        "locationId": 1,
+        "zipCode": 10001,
+        "createdAt": "2022-01-25T17:18:53.036Z",
+        "updatedAt": "2022-01-25T17:18:53.036Z"
+    },
+    {
+        "id": 1,
+        "userId": 2,
+        "locationId": 2,
+        "zipCode": 10001,
+        "createdAt": "2022-01-25T17:19:22.725Z",
+        "updatedAt": "2022-01-25T17:19:22.725Z"
+    },
+    {
+        "id": 2,
+        "userId": 2,
+        "locationId": 1,
+        "zipCode": 10002,
+        "createdAt": "2022-01-25T17:19:34.934Z",
+        "updatedAt": "2022-01-25T17:19:34.934Z"
+    },
+    {
+        "id": 3,
+        "userId": 3,
+        "locationId": 4,
+        "zipCode": 10002,
+        "createdAt": "2022-01-25T17:20:01.832Z",
+        "updatedAt": "2022-01-25T17:20:01.832Z"
+    }
+]
+
+

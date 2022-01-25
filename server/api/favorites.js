@@ -10,9 +10,9 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:id', async(req, res) => {
+router.get('/:userId', async(req, res) => {
     try {
-        const fav = await Favorites.findByPk(req.params.id)
+        const fav = await Favorites.findByPk(req.params.userId)
         res.send(fav)
     } catch (error) {
         res.send(error.message)

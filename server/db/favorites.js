@@ -7,7 +7,7 @@ const db = require("./database")
 
 
 const Favorites = db.define('favorites', {
- 
+ //
     userId: {
         type: DataTypes.INTEGER(),
         // foreignkey:true,

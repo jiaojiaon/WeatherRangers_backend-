@@ -21,11 +21,11 @@ module.exports = {
       location_id: {
         type: Sequelize.DataTypes.INTEGER,
         onDelete: 'CASCADE',
-        references: {
-          model:'Locations', 
-          key:'id',
-          as:'location_id',
-        },
+        // references: {
+        //   model:'Locations', 
+        //   key:'id',
+        //   as:'location_id',
+        // },
         allowNull: false,
       },
       createdAt: {

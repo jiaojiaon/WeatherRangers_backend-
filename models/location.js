@@ -11,15 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-    
-        // define association here
-        Location.belongsToMany(models.User, {
-          through: models.Favorite,
-          as: 'users',
-          foreignKey: 'location_id',
-          onDelete: 'CASCADE',
-        });    
-    };
+      Location.belongsToMany(models.User, {
+        through: models.Favorite,
+        as: 'users',
+        foreignKey: 'location_id',
+        onDelete: 'CASCADE',
+      }); 
+    }
   }
   Location.init({
     zip_code: DataTypes.INTEGER,

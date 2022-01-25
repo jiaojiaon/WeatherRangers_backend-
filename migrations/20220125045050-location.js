@@ -14,9 +14,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       state: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       city_name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

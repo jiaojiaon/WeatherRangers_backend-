@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const  Users  = require('../db/user')
+const Users = require('../db/user')
 
 router.get('/', async (req, res) => {
     try {
@@ -10,7 +10,22 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:id', async(req, res) => {
+router.get('/auth', async (req, res) => {
+    try {
+        const user = await Users.findOne({
+            where: { email: req.body.auth.email }
+        })
+        if(user.password === req.body.auth.password){
+            res.status(200).send()
+        }else{
+            res.status(401).send()
+        }
+    } catch (error) {
+        res.send(error.message)
+    }
+})
+
+router.get('/:id', async (req, res) => {
     try {
         const user = await Users.findByPk(req.params.id)
         res.send(user)
@@ -19,7 +34,9 @@ router.get('/:id', async(req, res) => {
     }
 })
 
-router.post('/', async(req, res) => {
+
+
+router.post('/', async (req, res) => {
     try {
         const newUser = await Users.create(req.body)
         res.json(newUser)
@@ -28,12 +45,12 @@ router.post('/', async(req, res) => {
     }
 })
 
-router.delete('/:id', async(req, res) =>  {
+router.delete('/:id', async (req, res) => {
     try {
         const userId = await Users.findByPk(req.params.id)
         userId.destroy()
         res.status(200).send("Successfully Deleted!")
-    } catch(error) {
+    } catch (error) {
         res.send(error.message)
     }
 });

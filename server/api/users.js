@@ -11,9 +11,9 @@ router.get('/', async (req, res) => {
 router.get('/auth', async (req, res) => {
     try {
         const user = await Users.findOne({
-            where: { email: req.body.auth.email }
+            where: { email: req.body.email }
         })
-        if(user.password === req.body.auth.password){
+        if(user.password === req.body.password){
             res.status(200).send()
         }else{
             res.status(401).send()

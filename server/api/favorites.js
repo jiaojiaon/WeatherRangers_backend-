@@ -12,7 +12,9 @@ router.get('/', async (req, res) => {
 
 router.get('/:userId', async(req, res) => {
     try {
-        const fav = await Favorites.findByPk(req.params.userId)
+        const fav = await Favorites.findAll({
+            where: { userId: req.params.userId }
+        })
         res.send(fav)
     } catch (error) {
         res.send(error.message)

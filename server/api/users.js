@@ -15,8 +15,8 @@ router.post('/auth', async (req, res) => {
             where: { email: req.body.data.email }
         })
         if(user.password === req.body.data.password){
-            const tempUser = {...user, password: ""};
-            res.status(200).send(tempUser)
+            const id = user.id
+            res.status(200).send({id:id})
         }else{
             res.status(401).send()
         }

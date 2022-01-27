@@ -37,9 +37,9 @@ const Users = db.define('users', {
     password: {
         type: DataTypes.STRING(15),
     },
-    zipCode:{
-        type: DataTypes.INTEGER(5)
-    }
+    // zipCode:{
+    //     type: DataTypes.INTEGER(5)
+    // }
     
 }, {
     freezeTableName: true

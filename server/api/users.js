@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
         res.status(404).send(error.message)
     }
 })
-router.get('/auth', async (req, res) => {
+router.post('/auth', async (req, res) => {
     
     try {
         const user = await Users.findOne({

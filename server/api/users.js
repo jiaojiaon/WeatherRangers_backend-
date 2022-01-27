@@ -1,3 +1,4 @@
+const express = require("express");
 const router = require('express').Router()
 const Users = require('../db/user')
 router.get('/', async (req, res) => {
@@ -22,6 +23,24 @@ router.get('/auth', async (req, res) => {
         res.send(error.message)
     }
 })
+router.post('/auth', async (req, res) => {
+    try {
+        const user = await User.findOne({ where: { email: req.body.email } });
+        if (!user) {
+          res.status(401).send("Wrong username and/or password");
+        }
+        else if (!user.correctPassword(req.body.password)) {
+          res.status(401).send("Wrong username and/or password");
+        }
+        else {
+          req.login(user, err => (err ? next(err) : res.json(user)));
+        }
+      }
+      catch (err) {
+        next(err);
+      }
+})
+
 router.get('/:id', async (req, res) => {
     try {
         const user = await Users.findByPk(req.params.id)

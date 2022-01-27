@@ -10,7 +10,7 @@ const db = require("./database")
 const Locations = db.define('locations', {
  
     zipCode: {
-        type: DataTypes.INTEGER(),
+        type: DataTypes.INTEGER(5),
         primarykey:true,
         allowNull: false,
         validate: {

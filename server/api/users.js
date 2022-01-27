@@ -9,18 +9,20 @@ router.get('/', async (req, res) => {
     }
 })
 router.get('/auth', async (req, res) => {
-    try {
-        const user = await Users.findOne({
-            where: { email: req.body.auth.email }
-        })
-        if(user.password === req.body.auth.password){
-            res.status(200).send()
-        }else{
-            res.status(401).send()
-        }
-    } catch (error) {
-        res.send(error.message)
-    }
+    
+    // try {
+    //     const user = await Users.findOne({
+    //         where: { email: req.body.auth.email }
+    //     })
+    //     if(user.password === req.body.auth.password){
+    //         res.status(200).send()
+    //     }else{
+    //         res.status(401).send()
+    //     }
+    // } catch (error) {
+    //     res.send(error.message)
+    // }
+    res.send(req.body)
 })
 router.get('/:id', async (req, res) => {
     try {

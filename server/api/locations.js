@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:zipCode',async(req, res) => {
     try {
-        const location = await Locations.findAll({
+        const location = await Locations.findOne({
             where: { zipCode: req.params.zipCode }
         })
         res.send(location)

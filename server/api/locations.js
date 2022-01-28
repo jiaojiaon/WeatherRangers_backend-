@@ -18,7 +18,17 @@ router.get('/:id', async(req, res) => {
         res.send(error.message)
     }
 })
-
+router.get('/:zipCode',async(req, res) => {
+    try{
+        const location = await Location.findOne({
+            where: { zipCode: req.body.data.zipCode }
+        })
+        res.send(location)
+    } catch (error) {
+        res.send(error.message)
+    }
+    
+})
 router.post('/', async(req, res) => {
     try {
         const newLocation = await Locations.create(req.body)

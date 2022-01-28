@@ -10,19 +10,19 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:id', async(req, res) => {
-    try {
-        const location = await Locations.findByPk(req.params.id)
-        res.send(location)
-    } catch (error) {
-        res.send(error.message)
-    }
-})
 router.get('/:zipCode',async(req, res) => {
     try {
         const location = await Locations.findAll({
             where: { zipCode: req.params.zipCode }
         })
+        res.send(location)
+    } catch (error) {
+        res.send(error.message)
+    }
+})
+router.get('/:id', async(req, res) => {
+    try {
+        const location = await Locations.findByPk(req.params.id)
         res.send(location)
     } catch (error) {
         res.send(error.message)

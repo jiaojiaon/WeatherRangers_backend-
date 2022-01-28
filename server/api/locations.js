@@ -20,9 +20,7 @@ router.get('/:id', async(req, res) => {
 })
 router.get('/:zipCode',async(req, res) => {
     try{
-        const location = await Location.findOne({
-            where: { zipCode: req.params.zipCode }
-        })
+        const location = await Location.findByPk(req.params.zipCode)
         res.send(location)
     } catch (error) {
         res.send(error.message)

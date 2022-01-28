@@ -19,14 +19,16 @@ router.get('/:id', async(req, res) => {
     }
 })
 router.get('/:zipCode',async(req, res) => {
-    try{
-        const location = await Location.findByPk(req.params.zipCode)
+    try {
+        const location = await Locations.findAll({
+            where: { zipCode: req.params.zipCode }
+        })
         res.send(location)
     } catch (error) {
         res.send(error.message)
     }
-    
 })
+
 router.post('/', async(req, res) => {
     try {
         const newLocation = await Locations.create(req.body)

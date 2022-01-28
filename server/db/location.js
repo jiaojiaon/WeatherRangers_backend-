@@ -8,10 +8,10 @@ const db = require("./database")
 
 
 const Locations = db.define('locations', {
- 
+
     zipCode: {
         type: DataTypes.INTEGER(5),
-        primarykey:true,
+        primarykey: true,
         allowNull: false,
         validate: {
             notEmpty: true,
@@ -28,13 +28,9 @@ const Locations = db.define('locations', {
     },
     states: {
         type: DataTypes.STRING(50),
-        allowNull: false,
-        validate: {
-            notEmpty: true,
-            notNull: true
-        }
+
     },
-  
+
 
 }, {
     freezeTableName: true
